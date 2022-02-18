@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Nightmare</title>
+    <link rel="shortcut icon" href="https://img.favpng.com/11/25/23/musical-note-symbol-sound-sign-png-favpng-xsH8FpYJr0kbVHhcbG12myB6U.jpg" type="image/x-icon">
+    <style>
+        body {
+            background: linear-gradient(45deg, #2980b9, #6dd5fa, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .player {
+            display: flex;
+        }
+        
+        .player div {
+            background: #fff;
+            border: 1px solid #000;
+            width: 150px;
+            height: 600px;
+            position: relative;
+        }
+        
+        .player div:before {
+            content: '';
+            position: absolute;
+            background: black;
+            width: 50%;
+            height: 75%;
+        }
+        
+        .player div.active {
+            background: #000;
+            transition: .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="player">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <audio></audio>
+    <audio></audio>
+    <audio></audio>
+    <audio></audio>
+    <audio></audio>
+    <audio></audio>
+    <audio></audio>
+    <audio></audio>
+    <audio></audio>
+    <audio></audio>
+    <script>
+        const audios = document.querySelectorAll('audio')
+        const divs = document.querySelectorAll('.player div')
+        audios.forEach(function(audio, index) {
+            audio.src = `./sounds/note (${index}).wav`
+        })
+        divs.forEach(function(div, index) {
+            div.onclick = function() {
+                audios[index].play()
+            }
+        })
+
+        function down(number) {
+            divs[number].click()
+            divs[number].classList.add('active')
+            setTimeout(up, 200)
+
+            function up() {
+                divs[number].classList.remove('active')
+            }
+        }
+        window.onkeydown = function(e) {
+            console.log(e.which)
+            switch (e.which) {
+                case 65:
+                    down(0)
+                    break;
+                case 83:
+                    down(1)
+                    break;
+                case 68:
+                    down(2)
+                    break;
+                case 70:
+                    down(3)
+                    break;
+                case 71:
+                    down(4)
+                    break;
+                case 72:
+                    down(5)
+                    break;
+                case 74:
+                    down(6)
+                    break;
+                case 75:
+                    down(7)
+                    break;
+                case 76:
+                    down(8);
+                    break;
+                case 186:
+                    down(9);
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

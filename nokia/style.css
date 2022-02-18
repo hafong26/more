@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+.f {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.textarea textarea {
+    background: #f7f7f7;
+    outline: none;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    line-height: 1.2;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+}
+
+.options {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.options button {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    padding: 10px 30px;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.options .font {
+    background: lime;
+}
+
+.options .convert {
+    background: blue;
+}
+
+.options .clear {
+    background: red;
+}
+
+.options button:hover {
+    opacity: 1;
+}
+
+.options button:active {
+    cursor: pointer;
+}
