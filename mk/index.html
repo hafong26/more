@@ -19,8 +19,8 @@
             width: 2.5em;
             height: 2.5em;
             line-height: 2.5em;
-            border-radius: 10px;
-            margin: 20px 10px;
+            border-radius: .2em;
+            margin: .2em;
             text-align: center;
         }
         
@@ -34,32 +34,58 @@
                 font-size: 30px;
             }
         }
+        
+        section {
+            display: flex;
+        }
     </style>
 </head>
 
 <body>
-    <div>
-        <i class="bx bxl-facebook"></i>
-        <i class="bx bxl-facebook"></i>
-        <i class="bx bxl-facebook"></i>
-    </div>
-    <div>
-        <i class="bx bxl-google"></i>
-        <i class="bx bxl-google"></i>
-    </div>
-    <div>
-        <i class="bx bxl-github"></i>
-    </div>
-    <div>
-        <i class='bx bxl-wordpress'></i>
-    </div>
-    <div>
-        <img class="bx" src="https://file.hstatic.net/1000265087/file/unnamed_7614c197d3034b7f88f489efa09ca211_grande.png" alt="">
-        <img class="bx" src="https://file.hstatic.net/1000265087/file/unnamed_7614c197d3034b7f88f489efa09ca211_grande.png" alt="">
-    </div>
+    <section>
+        <div>
+            <i class="bx bxl-facebook"></i>
+        </div>
+        <div>
+            <i class="bx bxl-facebook"></i>
+        </div>
+        <div>
+            <i class="bx bxl-facebook"></i>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <i class="bx bxl-google"></i>
+        </div>
+        <div>
+            <i class="bx bxl-google"></i>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <i class="bx bxl-github"></i>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <i class='bx bxl-wordpress'></i>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <img class="bx" src="https://file.hstatic.net/1000265087/file/unnamed_7614c197d3034b7f88f489efa09ca211_grande.png" alt="">
+        </div>
+        <div>
+            <img class="bx" src="https://file.hstatic.net/1000265087/file/unnamed_7614c197d3034b7f88f489efa09ca211_grande.png" alt="">
+        </div>
+    </section>
 
     <script>
-        const ss = document.querySelectorAll('i')
+        const ss = document.querySelectorAll('div')
         const pass = [
             //Facebook 
             'b^icnq2t$*vF',
