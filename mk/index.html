@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            background: #000;
+        }
+        
+        i {
+            background: #fff;
+            font-size: 100px;
+            padding: 25px;
+            border-radius: 50%;
+            margin: 25px;
+        }
+        
+        i:hover {
+            background: yellow;
+            cursor: pointer;
+        }
+        
+        i:active {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <i class="bx bxl-facebook"></i>
+    <i class="bx bxl-google"></i>
+    <script>
+        const ss = document.querySelectorAll('i')
+        const pass = [
+            //Facebook 
+            'b^icnq2t$*vF',
+            // Google
+            '^50d&^xuGz*L'
+        ]
+
+        ss.forEach(function(s, i) {
+            s.onclick = function() {
+                navigator.clipboard.writeText(pass[i]);
+            }
+        })
+    </script>
+</body>
+
+</html>
