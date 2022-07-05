@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        section {
+            position: relative;
+            cursor: none;
+        }
+        
+        div {
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: 9;
+            outline: 1px solid black;
+        }
+        
+        body.a div {
+            background-image: url(./a2.jpg);
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+        }
+        
+        body.b div {
+            background-image: url(./b2.jpg);
+            width: 100px;
+            height: 100px;
+            border-radius: none;
+        }
+        
+        body.c div {
+            background-image: url(./c2.jpg);
+            width: 130px;
+            height: 130px;
+            border-radius: none;
+        }
+        
+        body.a img.b,
+        body.a img.c,
+        body.b img.a,
+        body.b img.c,
+        body.c img.a,
+        body.c img.b {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="a">
+    <section>
+        <img src="a1.jpg" class="a">
+        <img src="b1.jpg" class="b">
+        <img src="c1.jpg" class="c">
+        <div></div>
+    </section>
+    <script>
+        const $ = document.querySelector.bind(document)
+        const section = $('section');
+        const div = $('div');
+
+        function Change() {
+            var i = 0;
+            window.onkeydown = () => {
+                i++;
+                if (i % 3 == 0)
+                    document.body.className = "a"
+                if (i % 3 == 1)
+                    document.body.className = "b"
+                if (i % 3 == 2)
+                    document.body.className = "c"
+            }
+        }
+
+        function Hover() {
+            section.onmousemove = function(e) {
+                Object.assign(div.style, {
+                    left: e.clientX + 'px',
+                    top: e.clientY + 'px',
+                    backgroundPositionX: -e.clientX + 'px',
+                    backgroundPositionY: -e.clientY + 'px'
+                })
+            }
+        }
+        Change()
+        Hover()
+    </script>
+</body>
+
+</html>
